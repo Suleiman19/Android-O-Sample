@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="demo_titles">
+        <item>Custom Font Resources</item>
+    </string-array>
+
+
+    <string-array name="demo_descriptions">
+        <item>Using custom font files to design a page that reads like a book.</item>
+    </string-array>
+
+</resources>

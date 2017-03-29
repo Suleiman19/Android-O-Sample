@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/layout_margin"
+    tools:background="#efefef">
+
+    <TextView
+        android:id="@+id/demo_index"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/layout_margin"
+        android:alpha="0.3"
+        android:gravity="top"
+        tools:text="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/layout_margin"
+        android:paddingRight="@dimen/layout_margin">
+
+        <TextView
+            android:id="@+id/demo_title"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/demo_description"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:paddingBottom="@dimen/layout_margin"
+            android:paddingTop="@dimen/layout_margin_half"
+            tools:text="Really long description about the demo" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.12"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+</LinearLayout>
