@@ -6,10 +6,24 @@
     android:orientation="vertical"
     tools:context="com.iamsuleiman.androido.PipActivity">
 
-    <VideoView
-        android:id="@+id/pip_videoview"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="192dp" />
+        android:layout_height="wrap_content">
+
+        <VideoView
+            android:id="@+id/pip_videoview"
+            android:layout_width="match_parent"
+            android:layout_height="192dp" />
+
+        <ImageButton
+            android:id="@+id/pip_imgbtn_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="@dimen/layout_margin"
+            android:background="@drawable/ic_keyboard_arrow_down_black_24dp" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
