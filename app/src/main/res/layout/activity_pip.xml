@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.iamsuleiman.androido.PipActivity">
+
+    <VideoView
+        android:id="@+id/pip_videoview"
+        android:layout_width="match_parent"
+        android:layout_height="192dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/layout_margin"
+        android:layout_marginHorizontal="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Video Headline Here" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/layout_margin"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:text="@string/large_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.24"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+
+</LinearLayout>
