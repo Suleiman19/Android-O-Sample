@@ -2,13 +2,13 @@
 <resources>
 
     <string-array name="demo_titles">
-        <item>Custom Font Resources</item>
+        <!--<item>Custom Font Resources</item>-->
         <item>Picture-in-Picture (PiP)</item>
     </string-array>
 
 
     <string-array name="demo_descriptions">
-        <item>Using custom font files to design a page that reads like a book.</item>
+        <!--<item>Using custom font files to design a page that reads like a book.</item>-->
         <item>Recreating a YouTube style PiP with VideoView</item>
     </string-array>
 

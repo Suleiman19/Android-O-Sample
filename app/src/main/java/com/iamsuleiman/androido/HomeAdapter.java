@@ -78,9 +78,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.SampleViewHold
 
                     switch (getAdapterPosition()) {
                         case 0:
-                            intent = new Intent(context, FontActivity.class);
-                            break;
-                        case 1:
                             intent = new Intent(context, PipActivity.class);
                             break;
                         default:
