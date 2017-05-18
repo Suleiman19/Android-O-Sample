@@ -70,22 +70,22 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.SampleViewHold
             mTextTitle = itemView.findViewById(R.id.demo_title);
             mTextDescription = itemView.findViewById(R.id.demo_description);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            itemView.setOnClickListener(view -> {
 
-                    Intent intent = null;
+                Intent intent = null;
 
-                    switch (getAdapterPosition()) {
-                        case 0:
-                            intent = new Intent(context, FontActivity.class);
-                            break;
-                        default:
-                            Log.w(TAG, "onClick: index not found");
-                    }
-
-                    if (intent != null) context.startActivity(intent);
+                switch (getAdapterPosition()) {
+                    case 0:
+                        intent = new Intent(context, FontActivity.class);
+                        break;
+                    case 1:
+                        intent = new Intent(context, PipActivity.class);
+                        break;
+                    default:
+                        Log.w(TAG, "onClick: index not found");
                 }
+
+                if (intent != null) context.startActivity(intent);
             });
         }
     }
