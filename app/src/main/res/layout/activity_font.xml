@@ -34,9 +34,9 @@
         <TextView
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
-            android:letterSpacing="0.04"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/lato_regular"
+            android:fontFamily="@font/pt_sans"
+            android:letterSpacing="0.04"
             android:lineSpacingExtra="4dp"
             android:text="@string/large_text" />
 

@@ -6,15 +6,89 @@
     android:orientation="vertical"
     tools:context="com.iamsuleiman.androido.PipActivity">
 
-    <VideoView
-        android:id="@+id/pip_videoview"
+
+    <RelativeLayout
+        android:id="@+id/pip_video_layout_parent"
         android:layout_width="match_parent"
-        android:layout_height="192dp" />
+        android:layout_height="192dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <VideoView
+            android:id="@+id/pip_videoview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <View
+            android:id="@+id/pip_video_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:background="@android:color/black"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <LinearLayout
+            android:id="@+id/pip_video_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/pip_btn_rewind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/layout_margin"
+                android:src="@drawable/ic_fast_rewind_black_24dp"
+                android:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/pip_btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/layout_margin"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/layout_margin"
+                android:src="@drawable/ic_play_circle_filled_black_24dp"
+                android:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/pip_btn_forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/layout_margin"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/layout_margin"
+                android:src="@drawable/ic_fast_forward_black_24dp"
+                android:tint="@android:color/white" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 
     <LinearLayout
+        android:id="@+id/pip_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/pip_content"
         android:orientation="vertical"
         android:padding="@dimen/layout_margin">
 

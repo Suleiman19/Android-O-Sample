@@ -23,8 +23,13 @@
             android:label="Custom Fonts" />
         <activity
             android:name=".PipActivity"
+            android:launchMode="singleTask"
             android:supportsPictureInPicture="true"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
