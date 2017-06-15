@@ -1,54 +1,55 @@
 package com.iamsuleiman.androido;
 
-import android.app.PictureInPictureArgs;
-import android.support.v7.app.AppCompatActivity;
+import android.app.PictureInPictureParams;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Rational;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class PipActivity extends AppCompatActivity {
 
     private ImageButton mBtnDown;
+    private Button button;
+    private View mockView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pip_test);
 
+        mockView = findViewById(R.id.pip_view);
+        mBtnDown = findViewById(R.id.btn_minimize);
+    }
 
-//        mBtnDown = (ImageButton) findViewById(R.id.pip_imgbtn_down);
-//        Drawable tintedDrawable =
-//                UiUtils.tintDrawable(
-//                        ContextCompat.getDrawable(this, R.drawable.ic_keyboard_arrow_down_black_24dp),
-//                        Color.WHITE);
-//
-//        mBtnDown.setImageDrawable(tintedDrawable);
-//
-//        VideoView mVideoView = (VideoView) findViewById(R.id.pip_videoview);
-//        mVideoView.setMediaController(new MediaController(this));
-//        mVideoView.requestFocus();
-//        mVideoView.start();
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-        final View mockView = findViewById(R.id.pip_view);
-        Button button = (Button) findViewById(R.id.btn_test);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        mBtnDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //Trigger PiP mode
-                try {
+                if (android.os.Build.VERSION.SDK_INT >= 26) {
+                    //Trigger PiP mode
+                    try {
+//                        float aspectRatio = (float) mockView.getWidth() / mockView.getHeight();
+                        Rational rational = new Rational(mockView.getWidth(), mockView.getHeight());
 
-                    float aspectRatio = (float) mockView.getWidth() / mockView.getHeight();
+                        PictureInPictureParams mParams =
+                                new PictureInPictureParams.Builder()
+                                        .setAspectRatio(rational)
+                                        .build();
 
-                    PictureInPictureArgs mPictureInPictureArgs = new PictureInPictureArgs();
-                    mPictureInPictureArgs.setAspectRatio(aspectRatio);
+                        enterPictureInPictureMode(mParams);
 
-                    enterPictureInPictureMode(mPictureInPictureArgs);
-
-                } catch (IllegalStateException e) {
-                    e.printStackTrace();
+                    } catch (IllegalStateException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(PipActivity.this, "API 26 needed to perform PiP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -57,5 +58,12 @@ public class PipActivity extends AppCompatActivity {
     @Override
     public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode) {
         super.onPictureInPictureModeChanged(isInPictureInPictureMode);
+
+        if (isInPictureInPictureMode) {
+            mBtnDown.setVisibility(View.GONE);
+        } else {
+            mBtnDown.setVisibility(View.VISIBLE);
+        }
+
     }
 }
