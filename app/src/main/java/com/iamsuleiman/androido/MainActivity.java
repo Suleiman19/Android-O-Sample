@@ -16,11 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mRecyclerView = (RecyclerView) findViewById(R.id.main_recycler);
+        mToolbar = findViewById(R.id.toolbar);
+        mRecyclerView = findViewById(R.id.main_recycler);
 
         setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null) getSupportActionBar().setTitle("Android O Samples");
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle("Android O Samples");
 
         mRecyclerView.setLayoutManager(
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));

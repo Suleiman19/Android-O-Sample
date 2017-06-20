@@ -2,14 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0-rc1"
+    buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.iamsuleiman.androido"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -17,11 +16,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 ext {
     supportLibVersion = "26.0.0-beta2"
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -33,4 +37,5 @@ dependencies {
     compile "com.android.support:recyclerview-v7:${supportLibVersion}"
     testCompile 'junit:junit:4.12'
 //    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    androidTestCompile 'junit:junit:4.12'
 }

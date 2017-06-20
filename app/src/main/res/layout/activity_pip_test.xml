@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <View
-        android:id="@+id/pip_view"
+    <FrameLayout
+        android:id="@+id/frame_mock_player"
         android:layout_width="match_parent"
-        android:layout_height="192dp"
-        android:layout_gravity="top"
-        android:background="@color/colorAccent"/>
+        android:layout_height="@dimen/app_bar_height"
+        android:background="@color/colorAccent">
 
-    <ImageButton
-        android:id="@+id/btn_minimize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|start"
-        android:layout_margin="@dimen/layout_margin"
-        android:background="?selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
-        android:tint="@android:color/white"/>
+        <ImageButton
+            android:id="@+id/btn_minimize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="@dimen/layout_margin"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_picture_in_picture_alt_black_24dp"
+            android:tint="@android:color/white" />
 
+        <!--Other Player UI here-->
+    </FrameLayout>
 
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF">
+
+        <!--Video details UI here-->
+
+    </FrameLayout>
+
+</LinearLayout>

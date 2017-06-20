@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.iamsuleiman.androido.FontActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_margin">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_half"
+            android:fontFamily="@font/merriweather_regular"
+            android:text="Material design is a comprehensive guide for design across platforms and devices." />
+
+        <TextView
+            android:id="@+id/font_txt_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:letterSpacing="0.08"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_marginVertical="@dimen/layout_margin_content"
+            android:alpha="0.4"
+            android:ellipsize="end"
+            android:text="A material metaphor is the unifying theory of space and motion. The material is grounded in reality, inspired by the study of paper and ink, yet technologically advanced and open to imagination and magic." />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pt_sans"
+            android:letterSpacing="0.04"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/large_text" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
